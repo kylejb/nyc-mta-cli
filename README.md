@@ -1,9 +1,8 @@
-The Commuter
-========================
----
-## DEMO
+# The Commuter
 
-Flatiron School, Module One, Solo Final Project:
+---
+
+## DEMO
 
 ![The Commuter Demo](demo/Mod1-Project_DEMO-Full_v2.gif)
 
@@ -11,9 +10,9 @@ Flatiron School, Module One, Solo Final Project:
 
 ## SETUP
 
-#### Prereqs: 
+#### Prerequisites: 
 * You will need get [your MTA API KEY](https://datamine.mta.info/) to access departure times
-* Ruby 2.6.1 or later as well as the gems listed in Gemfile (run `bundle`)
+* Ruby 2.7.1 or later as well as the gems listed in Gemfile (run `bundle`)
 
 #### Seeding Database:
 
@@ -35,4 +34,4 @@ The _SETUP_ will be refactored and automated/optimized in later versions.
 
 ## Author
 
-Created by Kyle Burda ([@kylejb](https://github.com/kylejb)) during "Mod 1" while at the [Flatiron School](https://flatironschool.com)
+- Kyle Burda ([@kylejb](https://github.com/kylejb))
