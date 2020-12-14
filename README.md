@@ -1,12 +1,8 @@
 # The Commuter
 
----
-
 ## DEMO
 
 ![The Commuter Demo](demo/Mod1-Project_DEMO-Full_v2.gif)
-
----
 
 ## SETUP
 
@@ -19,8 +15,6 @@
 1. Run `rake db:migrate` to initialize a local copy of my database model on your computer.
 
 2. Run `rake db:seed` to populate your database with TrainStation data; feel free to change line 13 and 14 in db/seeds.rb, if you do not want my sample data.
-
----
 
 ## Planned Changes
 
