@@ -6,23 +6,26 @@
 
 ## SETUP
 
-#### Prerequisites: 
+#### Prerequisites:
 * You will need get [your MTA API KEY](https://datamine.mta.info/) to access departure times
 * Ruby 2.7.1 or later as well as the gems listed in Gemfile (run `bundle`)
 
-#### Seeding Database:
+#### Installation Instructions:
 
-1. Run `rake db:migrate` to initialize a local copy of my database model on your computer.
+Both the installation and usage of this application requires a command line interface (e.g., Terminal or iTerm2 for macOSX users).
 
-2. Run `rake db:seed` to populate your database with TrainStation data; feel free to change line 13 and 14 in db/seeds.rb, if you do not want my sample data.
+1. Run `git clone https://github.com/kylejb/nyc-mta-station-arrival-feed.git` in the directory/folder of your choice and `cd nyc-mta-station-arrival-feed/` once the download is complete.
 
-## Planned Changes
+2. You should now be in the root directory of the project. Type in `ls` and hit enter. You are in the right place, if you see "bin", "config", "db", "demo", "lib", "README", etc.
 
-The _SETUP_ will be refactored and automated/optimized in later versions.
+###### From the root directory of the project (see Step 2), the following commands must be inputted as written:
 
-* Short term: additional code refactoring
+3. Run `rake db:migrate` to initialize a local copy of my database model on your computer.
 
-* Long term: _TBD_
+4. Run `rake db:seed` to populate your database with TrainStation data; uncomment and modify [line 15 in db/seeds.rb](db/seeds.rb), if you want to initialize database with the username and password of your choice.
+   1. It's okay to re-run `rake db:seed` if you decide to initialize the database with your credentials later.
+
+5. Finally, `ruby bin/run.rb` to run the application. Enjoy!
 
 ---
 
