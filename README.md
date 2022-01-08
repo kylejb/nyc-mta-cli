@@ -7,8 +7,10 @@
 ## SETUP
 
 #### Prerequisites:
-* You will need get [your MTA API KEY](https://datamine.mta.info/) to access departure times
-* Ruby 2.7.1 or later as well as the gems listed in Gemfile (run `bundle`)
+
+- You will need get [your MTA API KEY](https://datamine.mta.info/) to access departure times.
+- Ruby 3.0.0 or later as well as the gems listed in Gemfile (run `bundle install`).
+- Bundler v2+.
 
 #### Installation Instructions:
 
@@ -23,6 +25,7 @@ Both the installation and usage of this application requires a command line inte
 3. Run `rake db:migrate` to initialize a local copy of my database model on your computer.
 
 4. Run `rake db:seed` to populate your database with TrainStation data; uncomment and modify [line 15 in db/seeds.rb](db/seeds.rb), if you want to initialize database with the username and password of your choice.
+
    1. It's okay to re-run `rake db:seed` if you decide to initialize the database with your credentials later.
 
 5. Finally, `ruby bin/run.rb` to run the application. Enjoy!

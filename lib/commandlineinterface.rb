@@ -1,5 +1,3 @@
-require 'pry'
-
 module CommandLineInterface
 
   def self.greet
@@ -34,20 +32,19 @@ module CommandLineInterface
 
   def self.parse_trainall_list
     TrainStation.all.map do |ts_obj|
-      id_string, name = ts_obj.train_station[:id].to_s, ts_obj.train_station[:name]
-      stop_id, route_id = ts_obj.train_station[:stop_id], ts_obj.train_station[:route_id]
+      id_string, name = ts_obj[:id].to_s, ts_obj[:name]
+      stop_id, route_id = ts_obj[:stop_id], ts_obj[:route_id]
 
-      id_string + "--" + name + "--" + stop_id + "--" + route_id
+      "#{id_string}--#{name}--#{stop_id}--#{route_id}"
     end
   end
 
   def self.show_fav_list
-    #@current_user = User.find_by(name: response) if User.find_by(name: response)
     @current_user.favorite_stations.map do |fs_obj|
       id_string, name = fs_obj.train_station[:id].to_s, fs_obj.train_station[:name]
       stop_id, route_id = fs_obj.train_station[:stop_id], fs_obj.train_station[:route_id]
 
-      id_string + "--" + name + "--" + stop_id + "--" + route_id
+      "#{id_string}--#{name}--#{stop_id}--#{route_id}"
     end
   end
 
@@ -68,15 +65,10 @@ module CommandLineInterface
     current_departure_epoch = runner.station_time(data, stop_id, n_or_s)
     current_departure_times = current_departure_epoch.map { |time| Time.at(time).to_s }
 
-    puts "Initialzing connection with MTA Server."
-    sleep 2
-    puts "Initializing connection with MTA Server.."
-    sleep 1
-    puts "Initializing connection with MTA Server..."
-    sleep 1
-    puts "Connected!\nSTART::\nUpcoming train departures\n"
-    puts "#{current_departure_times[0..2].join("\n")}"
-    puts "<<END>>"
+    puts "Upcoming train departures...\n"
+    next_three_departure_times = current_departure_times[0..2].join("\n")
+    output_to_user = next_three_departure_times.length > 0 ? next_three_departure_times : "Times not available; please check back later."
+    puts "#{output_to_user}"
     run_program
   end
 

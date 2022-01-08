@@ -2,7 +2,6 @@ require 'protobuf'
 require 'google/transit/gtfs-realtime.pb'
 require 'httparty'
 require 'dotenv'
-require 'pry'
 
 Dotenv.load
 
@@ -45,7 +44,7 @@ class MtaRunner
   end
 
   def fetch_livefeed(api_url)
-    data = HTTParty.get(api_url, headers: {"x-api-key" => ENV["MTA_KEY"]})
+    data = HTTParty.get(api_url, headers: {"x-api-key" => ENV["MTA_API_KEY"]})
     feed = Transit_realtime::FeedMessage.decode(data)
     feed.entity
   end
@@ -75,5 +74,3 @@ class MtaRunner
     collected_times
   end
 end
-
-
