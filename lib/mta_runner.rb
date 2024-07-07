@@ -44,7 +44,7 @@ class MtaRunner
   end
 
   def fetch_livefeed(api_url)
-    data = HTTParty.get(api_url, headers: {"x-api-key" => ENV["MTA_API_KEY"]})
+    data = HTTParty.get(api_url)
     feed = Transit_realtime::FeedMessage.decode(data)
     feed.entity
   end
@@ -55,10 +55,8 @@ class MtaRunner
     full_stop_id = stop_id + n_or_s
 
     for trains in data do
-      # if !trains.dig(:trip_update, :stop_time_update).nil?
       if trains["trip_update"] != nil && trains["trip_update"]["stop_time_update"] != nil
         unique_train_schedule = trains["trip_update"]
-        # scheduled_arrival = unique_arrival_times.filter {|time| time[:stop_id] == full_stop_id }
         unique_arrival_times = unique_train_schedule["stop_time_update"]
         for scheduled_arrivals in unique_arrival_times do
           if scheduled_arrivals["stop_id"] == full_stop_id
