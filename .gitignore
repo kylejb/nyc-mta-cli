@@ -1,15 +1,11 @@
 .DS_Store
+.env
 .idea
-
-log
-node_modules
-out
-tmp
-
-*.iml
-*.log
-*.swp
+.vscode
 
 db/*.db
+db/*.db-shm
+db/*.db-wal
 
-.env
+logs
+*.log

@@ -1,4 +1,4 @@
-class CreateInitialSchema < ActiveRecord::Migration[7.0]
+class CreateInitialSchema < ActiveRecord::Migration[7.1]
     def change
       create_table :favorite_stations do |t|
         t.integer :user_id
