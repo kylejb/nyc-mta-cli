@@ -10,7 +10,7 @@ The Commuter is a CLI tool for viewing live arrival times at any NYC MTA subway 
 
 ### Prerequisites
 
-- Ruby >= 3.3.0
+- Ruby >= 4.0.0
 - Command line interface
 
 ### Setup
